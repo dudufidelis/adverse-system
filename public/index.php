@@ -2,7 +2,7 @@
 include '../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $codigo_evento = uniqid();
+    $codigo_evento = md5(time());
     $nome_paciente = $_POST['nome_paciente'];
     $sexo = $_POST['sexo'];
     $leito = $_POST['leito'];
