@@ -40,7 +40,6 @@ $result = $conn->query($sql);
     <title>Área Administrativa</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <style>
-        /* Estilos CSS para layout vertical */
         .record {
             border: 1px solid #000;
             margin-bottom: 10px;
@@ -66,24 +65,19 @@ $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<div class='record'>";
-                echo "<p><strong>ID:</strong> " . $row["id"] . "</p>";
-                echo "<p><strong>Código do Evento:</strong> " . $row["codigo_evento"] . "</p>";
+                echo "<p><strong>Código do Evento:</strong> " . $row["nome"] . "</p>";
+                echo "<p><strong>Nome:</strong> " . $row["id"] . "</p>";
                 echo "<p><strong>Nome do Paciente:</strong> " . $row["nome_paciente"] . "</p>";
                 echo "<p><strong>Sexo:</strong> " . $row["sexo"] . "</p>";
                 echo "<p><strong>Leito:</strong> " . $row["leito"] . "</p>";
                 echo "<p><strong>Idade:</strong> " . $row["idade"] . "</p>";
                 echo "<p><strong>Tipo de Incidente:</strong> " . $row["tipo_incidente"] . "</p>";
-                echo "<p><strong>Tipo de Evento:</strong> " . $row["tipo_evento"] . "</p>";
                 echo "<p><strong>Data do Evento:</strong> " . $row["data_evento"] . "</p>";
                 echo "<p><strong>Local do Evento:</strong> " . $row["local_evento"] . "</p>";
                 echo "<p><strong>Horário:</strong> " . $row["horario_evento"] . "</p>";
                 echo "<p><strong>Descrição:</strong> " . $row["descricao_evento"] . "</p>";
                 echo "<p><strong>Como Detectado:</strong> " . $row["como_detectado"] . "</p>";
                 echo "<p><strong>Ação Imediata:</strong> " . $row["acao_imediata"] . "</p>";
-                echo "<p><strong>Análise da Causa:</strong> " . $row["analise_causa"] . "</p>";
-                echo "<p><strong>Plano de Ação:</strong> " . $row["plano_acao"] . "</p>";
-                echo "<p><strong>Responsáveis:</strong> " . $row["responsaveis"] . "</p>";
-                echo "<p><strong>Prazo:</strong> " . $row["prazo"] . "</p>";
                 echo "</div>";
             }
         } else {

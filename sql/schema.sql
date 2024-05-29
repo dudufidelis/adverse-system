@@ -4,20 +4,13 @@ USE sistema_eventos_adversos;
 
 CREATE TABLE eventos_adversos (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
     codigo_evento VARCHAR(255) NOT NULL,
     nome_paciente VARCHAR(255) NOT NULL,
     sexo ENUM('Masculino', 'Feminino', 'Outro') NOT NULL,
     leito VARCHAR(255) NOT NULL,
     idade INT NOT NULL,
     tipo_incidente ENUM(
-        'Near miss/Quase erro', 
-        'Incidente sem danos', 
-        'Evento Adverso Leve', 
-        'Evento Adverso Moderado', 
-        'Evento Adverso Grave', 
-        'Evento Adverso com Óbito'
-    ) NOT NULL,
-    tipo_evento ENUM(
         'Associados à produto de saúde', 
         'Relacionado à cadeia medicamentosa', 
         'Broricoaspiração', 
@@ -40,10 +33,7 @@ CREATE TABLE eventos_adversos (
         'Outro'
     ) NOT NULL,
     acao_imediata TEXT NOT NULL,
-    analise_causa TEXT NOT NULL,
-    plano_acao TEXT NOT NULL,
-    responsaveis TEXT NOT NULL,
-    prazo DATE NOT NULL
+    responsaveis TEXT NOT NULL
 );
 
 CREATE TABLE administradores (
