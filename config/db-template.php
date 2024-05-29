@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "sistema_eventos_adversos";
+$dbname = "sys_adverse_events";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

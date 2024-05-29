@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $como_detectado = $_POST['como_detectado'];
     $acao_imediata = $_POST['acao_imediata'];
 
-    $sql = "INSERT INTO eventos_adversos (
+    $sql = "INSERT INTO adverse_events (
         codigo_evento, nome, nome_paciente, sexo, leito, idade, tipo_incidente, 
         data_evento, local_evento, horario_evento, descricao_evento, como_detectado, 
         acao_imediata

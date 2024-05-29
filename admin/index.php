@@ -17,7 +17,7 @@ $filter_code = isset($_GET['filter_code']) ? $_GET['filter_code'] : '';
 $filter_date = isset($_GET['filter_date']) ? $_GET['filter_date'] : '';
 
 // Query base
-$sql = "SELECT * FROM eventos_adversos";
+$sql = "SELECT * FROM adverse_events";
 
 // Aplicar filtros
 if (!empty($filter_code)) {
@@ -65,8 +65,8 @@ $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<div class='record'>";
-                echo "<p><strong>Código do Evento:</strong> " . $row["nome"] . "</p>";
-                echo "<p><strong>Nome:</strong> " . $row["id"] . "</p>";
+                echo "<p><strong>Código do Evento:</strong> " . $row["codigo_evento"] . "</p>";
+                echo "<p><strong>Nome:</strong> " . $row["nome"] . "</p>";
                 echo "<p><strong>Nome do Paciente:</strong> " . $row["nome_paciente"] . "</p>";
                 echo "<p><strong>Sexo:</strong> " . $row["sexo"] . "</p>";
                 echo "<p><strong>Leito:</strong> " . $row["leito"] . "</p>";
@@ -89,7 +89,7 @@ $result = $conn->query($sql);
     <!-- Paginação -->
     <?php
     
-    $sql = "SELECT COUNT(*) AS total_records FROM eventos_adversos";
+    $sql = "SELECT COUNT(*) AS total_records FROM adverse_events";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     $total_records = $row['total_records'];

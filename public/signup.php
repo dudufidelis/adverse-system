@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $hashed_password = password_hash($password, PASSWORD_BCRYPT); // Hash da senha usando bcrypt
 
-    $sql = "INSERT INTO administradores (username, password) VALUES ('$username', '$hashed_password')";
+    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Cadastro realizado com sucesso!";
