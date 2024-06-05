@@ -29,18 +29,6 @@
     width: 5px;
 }
 
-textarea::-webkit-scrollbar {
-    width: 5px;
-}
-textarea::-webkit-scrollbar-thumb {
-    background-color: var(--btn-color);
-    border-radius: 1rem;
-}
-textarea::-moz-scrollbar {
-    width: 5px;
-}
-
-
 body, html {
     background-color: var(--bg-color);
     height: 100%;
@@ -53,9 +41,9 @@ body, html {
     align-items: center;
     margin: 0 auto;
     width: 60rem;
-    height: auto;
     padding: 2rem;
     background-color: #ffff;
+    box-shadow: 5px 6px 4px rgba(0, 0, 0, 0.15);
     border-radius: 2.5rem;
 }
 
@@ -137,7 +125,6 @@ form > input[type="submit"] {
     font-weight: 400;
     cursor: pointer;
     transition: all ease-in-out 200ms;
-    margin-bottom: 2rem;
 }
 
 form > input[type="submit"]:hover {
