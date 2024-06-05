@@ -1,5 +1,5 @@
 <?php
-include '../config/db.php';
+include 'config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $codigo_evento = md5(time());
@@ -40,10 +40,10 @@ $conn->close();
 <html>
 <head>
     <title>Registro de Evento Adverso</title>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-    <?php include '../views/header.php'; ?>
+    <?php include 'views/header.php'; ?>
     <h2>Registro de Evento Adverso</h2>
     <form method="post" action="">
 
@@ -104,6 +104,6 @@ $conn->close();
 
         <input type="submit" value="Enviar">
     </form>
-    <?php include '../views/footer.php'; ?>
+    <?php include 'views/footer.php'; ?>
 </body>
 </html>

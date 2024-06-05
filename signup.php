@@ -1,5 +1,5 @@
 <?php
-include '../config/db.php';
+include 'config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -22,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>Cadastro de Administrador</title>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-    <?php include '../views/header.php'; ?>
+    <?php include 'views/header.php'; ?>
     <h2>Cadastro de Administrador</h2>
     <form method="post" action="">
         <label>Username:</label><br>
@@ -36,6 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <input type="submit" value="Cadastrar">
     </form>
-    <?php include '../views/footer.php'; ?>
+    <?php include 'views/footer.php'; ?>
 </body>
 </html>
