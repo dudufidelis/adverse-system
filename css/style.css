@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate:ital@0;1&display=swap');
+
+:root {
+    --bg-color: #F4F4F4;
+    --input-color: #E3E3E3;
+    --btn-color: #035980;
+    --bar-color:  #0000002e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: "Mate", serif;
+}
+
+/* ScrollBar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--btn-color);
+    border-radius: 1rem;
+}
+::-moz-scrollbar {
+    width: 5px;
+}
+
+textarea::-webkit-scrollbar {
+    width: 5px;
+}
+textarea::-webkit-scrollbar-thumb {
+    background-color: var(--btn-color);
+    border-radius: 1rem;
+}
+textarea::-moz-scrollbar {
+    width: 5px;
+}
+
+
+body, html {
+    background-color: var(--bg-color);
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 60rem;
+    height: auto;
+    padding: 2rem;
+    background-color: #ffff;
+    border-radius: 2.5rem;
+}
+
+/*Header*/
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo > img {
+    width: 35rem;
+    padding: 1.5rem;
+}
+
+.header-bar {
+    background-color: var(--bar-color);
+    height: 1px;
+    margin: 10px 0px 10px 0px;
+    width: 40rem;
+}
+
+.header-text > p {
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1.7rem;
+}
+
+/*Form*/
+
+.register-title {
+    margin: 2rem;
+    text-align: left;
+    width: 40rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > label {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+
+form > input, textarea, select {
+    border-radius: 0.375rem;
+    background: var(--input-color);
+    width: 40rem;
+    padding: .5rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+form > textarea {
+    height: 9rem;
+    resize: none;
+    overflow: auto;
+}
+
+form > select, input[type="time"] {
+    cursor: pointer;
+}
+
+form > input[type="submit"] {
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 0.375rem;
+    background: var(--btn-color);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 1.2rem;
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all ease-in-out 200ms;
+    margin-bottom: 2rem;
+}
+
+form > input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+
+
+
+

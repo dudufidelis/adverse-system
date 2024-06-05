@@ -37,73 +37,94 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
-    <title>Registro de Evento Adverso</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">>
+    <title>Eventos Adversos | Saine</title>
 </head>
+
 <body>
-    <?php include 'views/header.php'; ?>
-    <h2>Registro de Evento Adverso</h2>
-    <form method="post" action="">
+    <div class="container">
+        <div class="header">
+            <div class="header-logo">
+                <img src="assets/logo.svg" alt="Logo sistema adversos">
+            </div>
+            <div class="header-description">
+                <div class="header-bar"></div>
+                <div class="header-text">
+                    <p>A Segurança está em cada detalhe <br> e depende da colaboração de todos</p>
+                </div>
+                <div class="header-bar"></div>
+            </div>
+        </div>
 
-        <label>Nome (opcional)</label><br>
-        <input type="text" name="nome"><br><br>
+        <div class="register-title">
+            <h2>Registro do evento:</h2>
+        </div>
+  
+        <form method="post" action="">
 
-        <label>Nome do Paciente:</label><br>
-        <input type="text" name="nome_paciente" required><br><br>
+            <label>Nome (opcional)</label>
+            <input type="text" name="nome">
 
-        <label>Sexo:</label><br>
-        <select name="sexo" required>
-            <option value="Masculino">Masculino</option>
-            <option value="Feminino">Feminino</option>
-        </select><br><br>
+            <label>Nome do Paciente:</label>
+            <input type="text" name="nome_paciente" required>
 
-        <label>Leito:</label><br>
-        <input type="text" name="leito" required><br><br>
+            <label>Sexo:</label>
+            <select name="sexo" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+            </select>
 
-        <label>Idade:</label><br>
-        <input type="number" name="idade" required><br><br>
+            <label>Leito:</label>
+            <input type="text" name="leito" required>
 
-        <label>Tipo de Evento:</label><br>
-        <select name="tipo_incidente" required>
-            <option value="Associados à produto de saúde">Associados à produto de saúde</option>
-            <option value="Relacionado à cadeia medicamentosa">Relacionado à cadeia medicamentosa</option>
-            <option value="Broricoaspiração">Broricoaspiração</option>
-            <option value="Relacionados ao ato cirúrgico">Relacionados ao ato cirúrgico</option>
-            <option value="Falha no cuidado">Falha no cuidado</option>
-            <option value="TEV-Tromboembolismo venoso">TEV-Tromboembolismo venoso</option>
-            <option value="Infecção do sitio cirúrgico">Infecção do sitio cirúrgico</option>
-            <option value="Queda">Queda</option>
-            <option value="Outro">Outro</option>
-        </select><br><br>
+            <label>Idade:</label>
+            <input type="number" name="idade" required>
 
-        <label></label>Data do Evento:</label><br>
-        <input type="date" name="data_evento" required><br><br>
+            <label>Tipo de Evento:</label>
+            <select name="tipo_incidente" required>
+                <option value="Associados à produto de saúde">Associados à produto de saúde</option>
+                <option value="Relacionado à cadeia medicamentosa">Relacionado à cadeia medicamentosa</option>
+                <option value="Broricoaspiração">Broricoaspiração</option>
+                <option value="Relacionados ao ato cirúrgico">Relacionados ao ato cirúrgico</option>
+                <option value="Falha no cuidado">Falha no cuidado</option>
+                <option value="TEV-Tromboembolismo venoso">TEV-Tromboembolismo venoso</option>
+                <option value="Infecção do sitio cirúrgico">Infecção do sitio cirúrgico</option>
+                <option value="Queda">Queda</option>
+                <option value="Outro">Outro</option>
+            </select>
 
-        <label>Local onde ocorreu o evento adverso:</label><br>
-        <input type="text" name="local_evento" required><br><br>
+            <label></label>Data do Evento:</label>
+            <input type="date" name="data_evento" required>
 
-        <label>Horário:</label><br>
-        <input type="time" name="horario_evento" required><br><br>
+            <label>Local onde ocorreu o evento adverso:</label>
+            <input type="text" name="local_evento" required>
 
-        <label>Descreva o evento adverso:</label><br>
-        <textarea name="descricao_evento" required></textarea><br><br>
+            <label>Horário:</label>
+            <input type="time" name="horario_evento" required>
 
-        <label>Como o evento foi detectado:</label><br>
-        <select name="como_detectado" required>
-            <option value="Auditoria OPME">Auditoria OPME</option>
-            <option value="Contato com paciente">Contato com paciente</option>
-            <option value="Gerenciamento de entregas e demandas">Gerenciamento de entregas e demandas</option>
-            <option value="Prontuário do paciente">Prontuário do paciente</option>
-            <option value="Outro">Outro</option>
-        </select><br><br>
+            <label>Descreva o evento adverso:</label>
+            <textarea name="descricao_evento" required></textarea>
 
-        <label>Ação imediata realizada:</label><br>
-        <textarea name="acao_imediata" required></textarea><br><br>
+            <label>Como o evento foi detectado:</label>
+            <select name="como_detectado" required>
+                <option value="Auditoria OPME">Auditoria OPME</option>
+                <option value="Contato com paciente">Contato com paciente</option>
+                <option value="Gerenciamento de entregas e demandas">Gerenciamento de entregas e demandas</option>
+                <option value="Prontuário do paciente">Prontuário do paciente</option>
+                <option value="Outro">Outro</option>
+            </select>
 
-        <input type="submit" value="Enviar">
-    </form>
-    <?php include 'views/footer.php'; ?>
+            <label>Ação imediata realizada:</label>
+            <textarea name="acao_imediata" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 </body>
+
 </html>
