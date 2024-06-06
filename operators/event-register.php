@@ -2,7 +2,7 @@
 include '../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $codigo_evento = md5(time());
+    $codigo_evento = bin2hex(random_bytes(2)) . '-' . bin2hex(random_bytes(2));
     $nome = $_POST['nome'];
     $nome_paciente = $_POST['nome_paciente'];
     $sexo = $_POST['sexo'];
