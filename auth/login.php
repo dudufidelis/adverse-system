@@ -27,21 +27,35 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Administrativo</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <h2>Login Administrativo</h2>
-    <form method="post" action="">
-        <label>Username:</label><br>
-        <input type="text" name="username" required><br><br>
+<div class="container">
+        <header>
+            <img src="../assets/logo.svg" alt="Logo Saine Health Complex">
+            <h2>Area Administrativa</h2>
+        </header>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+        <form action="" method="post">
+            <div class="input">
+                <input placeholder="Usuario" type="text" id="nome_usuario" name="username" required>
+            </div>
+            <div class="input">
+                <input placeholder="Senha" type="password" id="senha" name="password" required>
+            </div>
+            
+        <?php if (isset($erro_login)): ?>
+            <p style="color: red; padding: 1rem;"><?php echo $erro_login; ?></p>
+        <?php endif; ?>
 
-        <input type="submit" value="Login">
-    </form>
+            <input type="submit">
+        </form>
+    </div>
 </body>
 </html>

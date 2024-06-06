@@ -1,5 +1,5 @@
 <?php
-include 'config/db.php';
+include '../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -19,23 +19,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Administrador</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <?php include 'views/header.php'; ?>
-    <h2>Cadastro de Administrador</h2>
-    <form method="post" action="">
-        <label>Username:</label><br>
-        <input type="text" name="username" required><br><br>
+    <div class="container">
+        <header>
+            <img src="../assets/logo.svg" alt="Logo Saine Health Complex">
+            <h2>Cadastro de Administrador</h2>
+        </header>
+        <form method="post" action="">
+            <div class="input">
+                <input type="text" placeholder="Usuário" name="username" required>
+            </div>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+            <div class="input">
+                <input type="password" placeholder="Senha" name="password" required>
+            </div>
 
-        <input type="submit" value="Cadastrar">
-    </form>
-    <?php include 'views/footer.php'; ?>
+            <input type="submit" value="Cadastrar">
+        </form>
+        </div>
 </body>
 </html>
