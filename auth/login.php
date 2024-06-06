@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'config/db.php';
+include '../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
             $_SESSION['loggedin'] = true;
-            header("Location: admin/index.php");
+            header("Location: ../admin/index.php");
             exit;
         } else {
             echo "Senha inválida";
@@ -30,10 +30,9 @@ $conn->close();
 <html>
 <head>
     <title>Login Administrativo</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-    <?php include 'views/header.php'; ?>
     <h2>Login Administrativo</h2>
     <form method="post" action="">
         <label>Username:</label><br>
@@ -44,6 +43,5 @@ $conn->close();
 
         <input type="submit" value="Login">
     </form>
-    <?php include 'views/footer.php'; ?>
 </body>
 </html>

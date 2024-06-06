@@ -1,48 +1,11 @@
-<?php
-include 'config/db.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $codigo_evento = md5(time());
-    $nome = $_POST['nome'];
-    $nome_paciente = $_POST['nome_paciente'];
-    $sexo = $_POST['sexo'];
-    $leito = $_POST['leito'];
-    $idade = $_POST['idade'];
-    $tipo_incidente = $_POST['tipo_incidente'];
-    $data_evento = $_POST['data_evento'];
-    $local_evento = $_POST['local_evento'];
-    $horario_evento = $_POST['horario_evento'];
-    $descricao_evento = $_POST['descricao_evento'];
-    $como_detectado = $_POST['como_detectado'];
-    $acao_imediata = $_POST['acao_imediata'];
-
-    $sql = "INSERT INTO adverse_events (
-        codigo_evento, nome, nome_paciente, sexo, leito, idade, tipo_incidente, 
-        data_evento, local_evento, horario_evento, descricao_evento, como_detectado, 
-        acao_imediata
-    ) VALUES (
-        '$codigo_evento', '$nome', '$nome_paciente', '$sexo', '$leito', '$idade', '$tipo_incidente', 
-        '$data_evento', '$local_evento', '$horario_evento', '$descricao_evento', '$como_detectado', 
-        '$acao_imediata'
-    )";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Evento adverso registrado com sucesso!";
-    } else {
-        echo "Erro: " . $sql . "<br>" . $conn->error;
-    }
-}
-
-$conn->close();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <title>Eventos Adversos | Saine</title>
 </head>
 
@@ -65,7 +28,7 @@ $conn->close();
             <h2>Registro do evento:</h2>
         </div>
   
-        <form method="post" action="">
+        <form action="http://localhost/eventos-adversos/operators/event-register.php" method="post">
 
             <label>Nome (opcional)</label>
             <input type="text" name="nome">

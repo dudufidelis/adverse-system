@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: ../public/login.php");
+    header("Location: ../auth/login.php");
     exit;
 }
 
@@ -38,7 +38,7 @@ $result = $conn->query($sql);
 <html>
 <head>
     <title>Área Administrativa</title>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <style>
         .record {
             border: 1px solid #000;
@@ -48,7 +48,6 @@ $result = $conn->query($sql);
     </style>
 </head>
 <body>
-    <?php include '../views/header.php'; ?>
     <h2>Registros de Eventos Adversos</h2>
 
     <!-- Formulário de filtro -->
@@ -105,7 +104,6 @@ $result = $conn->query($sql);
     ?>
 
     <br>
-    <a href="../public/logout.php">Logout</a>
-    <?php include '../views/footer.php'; ?>
+    <a href="../operators/logout.php">Logout</a>
 </body>
 </html>
