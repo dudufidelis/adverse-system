@@ -50,7 +50,7 @@ $result = $conn->query($sql);
         <header>
             <img src="../assets/saine-logo.png" alt="Logo Saine Health Complex">
             <h1>Área Administrativa</h1>
-            <a href="logout.php">Sair</a>
+            <a href="../operators/logout.php">Sair</a>
         </header>
 
         <!-- Formulário de filtro -->
