@@ -94,26 +94,49 @@ $result = $conn->query($sql);
             ?>
         </div>
 
-        <!-- Paginação -->
-        <?php
+<!-- Paginação -->
+<?php
+    $sql = "SELECT COUNT(*) AS total_records FROM adverse_events";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $total_records = $row['total_records'];
+    $total_pages = ceil($total_records / $records_per_page);
 
-        $sql = "SELECT COUNT(*) AS total_records FROM adverse_events";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $total_records = $row['total_records'];
-        $total_pages = ceil($total_records / $records_per_page);
+    // Determina a página atual
+    $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 
-        echo "<div class='pagination'>";
-        for ($i = 1; $i <= $total_pages; $i++) {
-            echo "<a href='?page=$i&filter_code=$filter_code&filter_date=$filter_date'>$i</a>";
+    echo "<div class='pagination'>";
+
+    // Exibe a seta para a esquerda se não estiver na primeira página
+    if ($current_page > 1) {
+        $prev_page = $current_page - 1;
+        echo "<a href='?page=$prev_page&filter_code=$filter_code&filter_date=$filter_date'>&laquo;</a>";
+    }
+
+    // Calcula o número inicial da página
+    $start_page = max(1, $current_page - 1);
+
+    // Exibe até três páginas
+    for ($i = $start_page; $i <= min($start_page + 4, $total_pages); $i++) {
+        echo "<a href='?page=$i&filter_code=$filter_code&filter_date=$filter_date'";
+        if ($i == $current_page) {
+            echo " style='color: #035980;";
         }
-        echo "</div>";
+        echo ">$i</a>";
+    }
 
-        $conn->close();
-        ?>
+    // Exibe a seta para a direita se não estiver na última página
+    if ($current_page < $total_pages) {
+        $next_page = $current_page + 1;
+        echo "<a href='?page=$next_page&filter_code=$filter_code&filter_date=$filter_date'>&raquo;</a>";
+    }
 
-        <br>
-        <a href="../operators/logout.php">Logout</a>
+    echo "</div>";
+
+    $conn->close();
+?>
+
+
 </body>
 
 </html>
