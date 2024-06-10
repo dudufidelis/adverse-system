@@ -8,7 +8,7 @@ CREATE TABLE adverse_events (
     nome VARCHAR(100),
     nome_paciente VARCHAR(100) NOT NULL,
     sexo ENUM('Masculino', 'Feminino') NOT NULL,
-    leito VARCHAR NOT NULL,
+    leito VARCHAR(10) NOT NULL,
     idade INT NOT NULL,
     tipo_incidente ENUM(
         'Associados à produto de saúde', 
