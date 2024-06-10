@@ -6,9 +6,9 @@ CREATE TABLE adverse_events (
     id INT AUTO_INCREMENT PRIMARY KEY,
     codigo_evento VARCHAR(255) NOT NULL,
     nome VARCHAR(100),
-    nome_paciente VARCHAR(255) NOT NULL,
+    nome_paciente VARCHAR(100) NOT NULL,
     sexo ENUM('Masculino', 'Feminino') NOT NULL,
-    leito VARCHAR(255) NOT NULL,
+    leito VARCHAR NOT NULL,
     idade INT NOT NULL,
     tipo_incidente ENUM(
         'Associados à produto de saúde', 
@@ -37,6 +37,6 @@ CREATE TABLE adverse_events (
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
+    username VARCHAR(30) NOT NULL,
     password VARCHAR(255) NOT NULL
 );
