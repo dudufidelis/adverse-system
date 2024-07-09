@@ -27,29 +27,36 @@
         <div class="register-title">
             <h2>Registro do evento:</h2>
         </div>
-  
-        <form action="http://localhost/eventos-adversos/operators/event-register.php" method="post">
 
-            <label>Nome (opcional)</label>
-            <input type="text" name="nome">
+        <form action="http://localhost/adverse-system/operators/event-register.php" method="post">
+            
+            <label>Nome do Paciente:</label><br>
+            <input type="text" name="nome_paciente" required><br><br>
 
-            <label>Nome do Paciente:</label>
-            <input type="text" name="nome_paciente" required>
-
-            <label>Sexo:</label>
+            <label>Sexo:</label><br>
             <select name="sexo" required>
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
-            </select>
+            </select><br><br>
 
-            <label>Leito:</label>
-            <input type="number" name="leito" required>
+            <label>Leito:</label><br>
+            <input type="number" name="leito" required><br><br>
 
-            <label>Idade:</label>
-            <input type="number" name="idade" required>
+            <label>Idade:</label><br>
+            <input type="number" name="idade" required><br><br>
 
-            <label>Tipo de Evento:</label>
+            <label>Tipo de Incidente:</label><br>
             <select name="tipo_incidente" required>
+                <option value="Near miss/Quase erro">Near miss/Quase erro</option>
+                <option value="Incidente sem danos">Incidente sem danos</option>
+                <option value="Evento Adverso Leve">Evento Adverso Leve</option>
+                <option value="Evento Adverso Moderado">Evento Adverso Moderado</option>
+                <option value="Evento Adverso Grave">Evento Adverso Grave</option>
+                <option value="Evento Adverso com Óbito">Evento Adverso com Óbito</option>
+            </select><br><br>
+
+            <label>Tipo de Evento:</label><br>
+            <select name="tipo_evento" required>
                 <option value="Associados à produto de saúde">Associados à produto de saúde</option>
                 <option value="Relacionado à cadeia medicamentosa">Relacionado à cadeia medicamentosa</option>
                 <option value="Broricoaspiração">Broricoaspiração</option>
@@ -59,31 +66,43 @@
                 <option value="Infecção do sitio cirúrgico">Infecção do sitio cirúrgico</option>
                 <option value="Queda">Queda</option>
                 <option value="Outro">Outro</option>
-            </select>
+            </select><br><br>
 
-            <label></label>Data do Evento:</label>
-            <input type="date" name="data_evento" required>
+            <label>Data do Evento:</label><br>
+            <input type="date" name="data_evento" required><br><br>
+            
+            <label>Horário:</label><br>
+            <input type="time" name="horario_evento" required><br><br>
 
-            <label>Local onde ocorreu o evento adverso:</label>
-            <input type="text" name="local_evento" required>
+            <label>Local onde ocorreu o evento adverso:</label><br>
+            <input type="text" name="local_evento" required><br><br>
 
-            <label>Horário:</label>
-            <input type="time" name="horario_evento" required>
+            <label>Descreva o evento adverso:</label><br>
+            <textarea name="descricao_evento" required></textarea><br><br>
 
-            <label>Descreva o evento adverso:</label>
-            <textarea name="descricao_evento" required></textarea>
-
-            <label>Como o evento foi detectado:</label>
+            <label>Como o evento adverso foi detectado:</label><br>
             <select name="como_detectado" required>
                 <option value="Auditoria OPME">Auditoria OPME</option>
                 <option value="Contato com paciente">Contato com paciente</option>
                 <option value="Gerenciamento de entregas e demandas">Gerenciamento de entregas e demandas</option>
                 <option value="Prontuário do paciente">Prontuário do paciente</option>
                 <option value="Outro">Outro</option>
-            </select>
+            </select><br><br>
 
-            <label>Ação imediata realizada:</label>
-            <textarea name="acao_imediata" required></textarea>
+            <label>Ação imediata realizada:</label><br>
+            <textarea name="acao_imediata" required></textarea><br><br>
+
+            <label>Análise da causa:</label><br>
+            <textarea name="analise_causa" required></textarea><br><br>
+
+            <label>Plano de ação:</label><br>
+            <textarea name="plano_acao" required></textarea><br><br>
+
+            <label>Responsáveis:</label><br>
+            <input name="responsaveis" required></input><br><br>
+
+            <label>Prazo:</label><br>
+            <input type="date" name="prazo" required><br><br>
 
             <input type="submit" value="Enviar">
         </form>

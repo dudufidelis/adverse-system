@@ -91,7 +91,6 @@ form > label {
     color: #000;
     font-size: 1.2rem;
     font-weight: 400;
-    margin-bottom: .5rem;
 }
 
 form > input, textarea, select {
@@ -100,7 +99,6 @@ form > input, textarea, select {
     width: 40rem;
     padding: .5rem;
     font-size: 1rem;
-    margin-bottom: 1.5rem;
 }
 
 form > textarea {
